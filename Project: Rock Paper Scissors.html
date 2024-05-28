@@ -3,11 +3,29 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Document</title>
+  <title>Project-Rock-Paper-Scissors
+    Public</title>
 </head>
 <body>
   <script>
-    
+    console.log("hello world");
+
+    function GetComputerChoice () {
+     // let number = Math.random();
+
+      if (Math.random() <= 0.33) {
+        return "rock";
+      } else if (Math.random() >= 0.34 && Math.random() <= 0.66) {
+        return "paper";
+      } else {
+        return "scissors";
+    }
+  }
+
+    /* pseudocode
+    if math random is between 0 and 0.33,  return rock
+    if math random is between 0.34 and 0.66, return paper
+    if math random is between 0.67 and 1, return scissors
   </script>
 </body>
 </html>
