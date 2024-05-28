@@ -10,22 +10,47 @@
   <script>
     console.log("hello world");
 
-    function GetComputerChoice () {
-     // let number = Math.random();
+    function GetComputerChoice() {
+     let number = Math.random();
+      //pseudocode
+    //if math random is between 0 and 0.33,  return rock
+    //if math random is between 0.34 and 0.66, return paper
+    //if math random is between 0.67 and 1, return scissors/*
 
-      if (Math.random() <= 0.33) {
+      if (number <= 0.33) {
         return "rock";
-      } else if (Math.random() >= 0.34 && Math.random() <= 0.66) {
+      } else if (number >= 0.34 && number <= 0.66) {
         return "paper";
       } else {
         return "scissors";
     }
   }
 
-    /* pseudocode
-    if math random is between 0 and 0.33,  return rock
-    if math random is between 0.34 and 0.66, return paper
-    if math random is between 0.67 and 1, return scissors
+  function getHumanChoice() {
+    let HumanChoice = prompt("Rock? Papers? Scissors ?").toLowerCase();
+//pseudocode
+//if human pick rock returns rock
+//if human pick paper returns paper
+//if human pick scissors returns scissors
+
+    if ( HumanChoice === "rock") {
+      return "rock";
+    } else if ( HumanChoice === "paper") {
+      return "paper";
+    } else if ( HumanChoice === "scissors") {
+      return "scissors";
+    } else {
+      return "Invalid syntax";
+    }
+      
+  }
+
+    console.log(GetComputerChoice());
+    
+    let HumanInput = getHumanChoice();
+    console.log(HumanInput);
+
+   
   </script>
 </body>
 </html>
