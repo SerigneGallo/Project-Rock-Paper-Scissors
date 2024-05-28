@@ -10,7 +10,7 @@
   <script>
     console.log("hello world");
 
-    function GetComputerChoice() {
+    function getComputerChoice() {
      let number = Math.random();
       //pseudocode
     //if math random is between 0 and 0.33,  return rock
@@ -26,8 +26,8 @@
     }
   }
 
-  function getHumanChoice() {
-    let HumanChoice = prompt("Rock? Papers? Scissors ?").toLowerCase();
+    function getHumanChoice() {
+     let HumanChoice = prompt("Rock? Papers? Scissors ?").toLowerCase();
 //pseudocode
 //if human pick rock returns rock
 //if human pick paper returns paper
@@ -41,14 +41,55 @@
       return "scissors";
     } else {
       return "Invalid syntax";
-    }
-      
+    }     
   }
 
-    console.log(GetComputerChoice());
-    
-    let HumanInput = getHumanChoice();
-    console.log(HumanInput);
+    let humanScore = 0;
+    let computerScore = 0;
+
+    function playRound(humanChoice,computerChoice) {
+      humanChoice = humanChoice.toLowerCase();
+
+     if (humanChoice === computerChoice) {
+        console.log("equality");
+        return "equality";
+     }
+
+     if (humanChoice === "rock" && computerChoice === "scissors") {
+        console.log("Rock beats scissors. You Win!");
+        computerScore += 1;
+        return "You Win!";
+     } else if (humanChoice === "scissors" && computerChoice === "rock") {
+        console.log("scissors loses to rock. You Loose!");
+        computerScore += 1;
+        return "You Loose!";
+     } else if (humanChoice === "scissors" && computerChoice === "paper") {
+        console.log("scissors beats paper. You Win!");
+        humanScore += 1;
+        return "You Win!";
+     } else if (humanChoice === "paper" && computerChoice === "scissors") {
+        console.log("paper loses to scissors. You Loose!");
+        computerScore += 1;
+        return "You Loose!";
+     } else if (humanChoice === "paper" && computerChoice === "rock") {
+        console.log("paper beats rock. You Win!");
+        humanScore += 1;
+        return "You Win!";
+     } else {
+        console.log("rock loses to paper. You Loose!");
+        computerScore += 1;
+        return "You Loose!";
+     }
+
+
+    }
+    const humanSelection = getHumanChoice();
+    const computerSelection = getComputerChoice();
+
+    playRound(humanSelection, computerSelection);
+
+    //console.log(GetComputerChoice());
+    //console.log(getHumanChoice());
 
    
   </script>
