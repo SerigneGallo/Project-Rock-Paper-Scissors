@@ -46,51 +46,59 @@
 
      if (humanChoice === computerChoice) {
         return "equality";
-     }
+     
 
-     if (humanChoice === "rock" && computerChoice === "scissors") {
+     } else if (humanChoice === "rock" && computerChoice === "scissors") {
         //console.log("Rock beats scissors. You Win!");
         humanScore += 1;
         return "Rock beats scissors. You Win!";
      } else if (humanChoice === "scissors" && computerChoice === "rock") {
-        console.log("scissors loses to rock. You Lose!");
+        //console.log("scissors loses to rock. You Lose!");
         computerScore += 1;
-        return "You Lose!";
+        return "scissors loses to rock. You Lose!";
      } else if (humanChoice === "scissors" && computerChoice === "paper") {
-        console.log("scissors beats paper. You Win!");
+        //console.log("scissors beats paper. You Win!");
         humanScore += 1;
-        return "You Win!";
+        return "scissors beats paper. You Win!";
      } else if (humanChoice === "paper" && computerChoice === "scissors") {
-        console.log("paper loses to scissors. You Lose!");
+        //console.log("paper loses to scissors. You Lose!");
         computerScore += 1;
-        return "You Lose!";
+        return "paper loses to scissors. You Lose!";
      } else if (humanChoice === "paper" && computerChoice === "rock") {
-        console.log("paper beats rock. You Win!");
+        //console.log("paper beats rock. You Win!");
         humanScore += 1;
-        return "You Win!";
+        return "paper beats rock. You Win!";
      } else {
-        console.log("rock loses to paper. You Lose!");
+        //console.log("rock loses to paper. You Lose!");
         computerScore += 1;
-        return "You Lose!";
+        return "rock loses to paper. You Lose!";
      }
     }
 
+    for (let i = 0; i < 5; i++) { 
     const humanSelection = getHumanChoice();
     const computerSelection = getComputerChoice();
-
+    
+    
     const result = playRound(humanSelection, computerSelection);
     console.log(result);
     console.log(`Human Score: ${humanScore}, Computer Score: ${computerScore}`);
-//2)afficher human choice et computer choice pour dans la console: cc human score line
-// ou autre meilleure technique -> backtick``et $ à insérer dans return. CC GPT aussi
-// 1)voir par rapport à gpt comment bouger la fonction playgame (encapsuler le fx au dessus)
-
-    
-
-      
+    //console.log(`Human choice: ${humanSelection}, Computer choice: ${computerSelection}`)
     }
+    
+    if (humanScore > computerScore) {
+        console.log("Human wins the game!");
+      } else if (computerScore > humanScore) {
+        console.log("Computer wins the game!");
+      } else {
+        console.log("The game is a tie!");
+      }
 
-   
+  }
+
+
+    playGame()
+
   </script>
 </body>
 </html>
