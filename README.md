@@ -53,8 +53,7 @@ const computerSelection = getComputerChoice();
 
 playRound(humanSelection, computerSelection);
 
-`\`\`\`
-
+```
 ## Step 6: Write the Logic to Play the Entire Game
 Your game will play 5 rounds. You will write a function named `playGame` that calls `playRound` to play 5 rounds, keeps track of the scores, and declares a winner at the end.
 
